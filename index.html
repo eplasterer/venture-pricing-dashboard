@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0b0e14">
+    <meta name="description" content="An evidence-led view of competitor pricing for a movie and show recommendation website.">
+    <title>Pricing Intelligence | Movie &amp; Show Recommendation Website</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Dashboard navigation">
+        <a class="brand" href="#overview" aria-label="Pricing Intelligence home">
+          <span class="brand-mark">P<span>+</span></span>
+          <span class="brand-copy"><strong>PRICING INTEL</strong><small>MARKET MONITOR</small></span>
+        </a>
+        <div class="workspace-label">WORKSPACE <span>US MARKET</span></div>
+        <nav class="nav-list">
+          <a class="nav-link active" href="#overview"><span class="nav-icon">◉</span> Executive overview</a>
+          <a class="nav-link" href="#landscape"><span class="nav-icon">◎</span> Competitor landscape</a>
+          <a class="nav-link" href="#pricing"><span class="nav-icon">▥</span> Pricing comparison</a>
+          <a class="nav-link" href="#explorer"><span class="nav-icon">↔</span> Price position explorer</a>
+          <a class="nav-link" href="#opportunities"><span class="nav-icon">✳</span> Opportunities</a>
+          <a class="nav-link" href="#methodology"><span class="nav-icon">⌕</span> Sources &amp; methodology</a>
+        </nav>
+        <div class="sidebar-bottom">
+          <div class="sidebar-note"><span class="pulse-dot"></span><div><strong>Research snapshot</strong><small>October 27, 2026</small></div></div>
+          <div class="sidebar-foot">COMPETITIVE PRICING<br><span>MISSION 02</span></div>
+        </div>
+      </aside>
+
+      <div class="main-shell">
+        <header class="topbar">
+          <div class="breadcrumbs"><span>INTELLIGENCE</span><i>/</i><strong id="breadcrumb-current">OVERVIEW</strong></div>
+          <div class="topbar-right"><span class="snapshot-chip"><span class="pulse-dot"></span> Snapshot data</span><span class="topbar-date">US · USD</span></div>
+        </header>
+
+        <main id="main-content">
+          <section class="hero section-anchor" id="overview">
+            <div class="hero-copy">
+              <div class="eyebrow"><span class="eyebrow-line"></span> COMPETITIVE PRICING DASHBOARD <span class="eyebrow-tag">01 / 06</span></div>
+              <h1>Decision intelligence<br><em>for what's next.</em></h1>
+              <p class="hero-subtitle">Movie and Show Recommendation Website <span class="hero-separator">·</span> United States</p>
+              <p class="hero-description">A research-led view of the price signals, feature bundles and open space around helping people find something everyone wants to watch.</p>
+            </div>
+            <div class="hero-quote">
+              <span class="quote-mark">“</span>
+              <p>Spend less time choosing<br>and more time enjoying.</p>
+              <small>PROPOSED VALUE PROPOSITION</small>
+            </div>
+            <div class="hero-meta"><span><b>4</b> competitors tracked</span><span class="meta-divider"></span><span><b>9</b> pricing offers reviewed</span><span class="meta-divider"></span><span>Last researched <b>27 Oct 2026</b></span></div>
+          </section>
+
+          <section class="section-block" aria-labelledby="snapshot-heading">
+            <div class="section-heading">
+              <div><div class="eyebrow"><span class="eyebrow-line"></span> THE MARKET AT A GLANCE</div><h2 id="snapshot-heading">A free entry point is the norm.</h2></div>
+              <p class="section-aside">Sample scope: four selected discovery and film services. This is a directional snapshot, not a market-wide estimate.</p>
+            </div>
+            <div class="kpi-grid" id="kpi-grid"></div>
+            <div class="overview-grid">
+              <article class="panel chart-panel">
+                <div class="panel-head"><div><span class="panel-kicker">ONE OFFER PER COMPETITOR</span><h3>Representative price points</h3></div><button class="icon-button" type="button" aria-label="About representative prices" data-tip="Paid entry plan where identified; otherwise the free core offer. Annual fees are divided by 12 for comparison.">i</button></div>
+                <p class="panel-description">Monthly equivalent · representative offer rule is explained in methodology.</p>
+                <div id="representative-chart" class="chart-slot"></div>
+                <div class="chart-foot"><span class="legend-dot accent-blue"></span> Representative benchmark <span class="chart-foot-note" id="rep-chart-note"></span></div>
+              </article>
+              <article class="panel insight-panel">
+                <div class="panel-head"><div><span class="panel-kicker">MARKET READOUT</span><h3>What the sample says</h3></div><span class="panel-icon">↗</span></div>
+                <div class="readout-list" id="market-readout"></div>
+                <div class="sample-caveat"><span class="info-dot">i</span><p>Different features sit behind these prices. JustWatch Plus is a bundle; annual plans are normalized only for comparison.</p></div>
+              </article>
+            </div>
+            <div class="chart-grid">
+              <article class="panel">
+                <div class="panel-head"><div><span class="panel-kicker">LOWEST TO HIGHEST</span><h3>Observed price span</h3></div><span class="mini-unit">USD / month equiv.</span></div>
+                <p class="panel-description">Complete researched offer set by competitor, including the free entry tier.</p>
+                <div id="range-chart" class="range-chart"></div>
+              </article>
+              <article class="panel">
+                <div class="panel-head"><div><span class="panel-kicker">ALL 9 OFFERS</span><h3>Price distribution</h3></div><span class="mini-unit">Monthly equivalent</span></div>
+                <p class="panel-description">Annual memberships divided by 12; free access remains $0.</p>
+                <div id="distribution-chart" class="distribution-chart"></div>
+              </article>
+            </div>
+          </section>
+
+          <section class="section-block section-divider section-anchor" id="landscape" aria-labelledby="landscape-heading">
+            <div class="section-heading">
+              <div><div class="eyebrow"><span class="eyebrow-line"></span> COMPETITOR LANDSCAPE <span class="eyebrow-tag">02 / 06</span></div><h2 id="landscape-heading">Know the alternatives.</h2></div>
+              <p class="section-aside">Search, filter and select companies to view the source-backed profiles and compare their offers.</p>
+            </div>
+            <div class="toolbar">
+              <label class="search-field"><span>⌕</span><input id="competitor-search" type="search" placeholder="Search competitors or capabilities" aria-label="Search competitors or capabilities"></label>
+              <label class="select-field"><span>TYPE</span><select id="competitor-type"><option value="all">All competitors</option><option value="direct">Direct / adjacent</option><option value="indirect">Indirect</option></select></label>
+              <label class="select-field"><span>PRICE POSITION</span><select id="competitor-position"><option value="all">All positions</option><option value="Budget-oriented">Budget-oriented</option><option value="Near market middle">Near market middle</option><option value="Premium-oriented">Premium-oriented</option><option value="Above observed range">Above observed range</option></select></label>
+              <label class="select-field"><span>SORT</span><select id="competitor-sort"><option value="name-asc">Name A–Z</option><option value="price-asc">Price low to high</option><option value="price-desc">Price high to low</option></select></label>
+            </div>
+            <div id="competitor-cards" class="competitor-grid"></div>
+            <div class="comparison-drawer" id="comparison-drawer" aria-live="polite"></div>
+          </section>
+
+          <section class="section-block section-divider section-anchor" id="pricing" aria-labelledby="pricing-heading">
+            <div class="section-heading">
+              <div><div class="eyebrow"><span class="eyebrow-line"></span> PRICING COMPARISON <span class="eyebrow-tag">03 / 06</span></div><h2 id="pricing-heading">Every offer, in context.</h2></div>
+              <p class="section-aside">The full offer set and the one-per-competitor comparison answer different questions. Keep the populations separate.</p>
+            </div>
+            <div class="offer-summary-strip" id="offer-summary"></div>
+            <article class="panel offer-table-panel">
+              <div class="table-title-row">
+                <div><span class="panel-kicker">RESEARCHED OFFERS</span><h3>Offer-level comparison</h3></div>
+                <div class="table-controls">
+                  <label class="search-field table-search"><span>⌕</span><input id="offer-search" type="search" placeholder="Search offers" aria-label="Search researched offers"></label>
+                  <label class="select-field compact"><span>SORT</span><select id="offer-sort"><option value="price-asc">Price low to high</option><option value="price-desc">Price high to low</option><option value="competitor">Competitor A–Z</option><option value="verification">Verification</option></select></label>
+                </div>
+              </div>
+              <div class="filter-pills" id="offer-filters">
+                <button class="filter-pill active" type="button" data-filter="all">All offers</button>
+                <button class="filter-pill" type="button" data-filter="free">Free</button>
+                <button class="filter-pill" type="button" data-filter="paid">Paid</button>
+                <button class="filter-pill" type="button" data-filter="partial">Partially verified</button>
+              </div>
+              <div class="table-scroll">
+                <table>
+                  <thead><tr><th scope="col">COMPETITOR / OFFER</th><th scope="col">PRICE AS ADVERTISED</th><th scope="col">MONTHLY EQUIV.</th><th scope="col">BILLING</th><th scope="col">PROMOTION / AVAILABILITY</th><th scope="col">VERIFICATION</th><th scope="col">SOURCE</th></tr></thead>
+                  <tbody id="offer-table-body"></tbody>
+                </table>
+              </div>
+              <div class="table-footer"><span id="offer-count"></span><span>Regular price: not separately established in the source set.</span></div>
+            </article>
+            <div class="table-note"><span class="info-dot">i</span> Price ranges and distribution use the nine records in the research JSON. No optional add-on is counted as a separate product. No out-of-stock item was reported.</div>
+          </section>
+
+          <section class="section-block section-divider section-anchor" id="explorer" aria-labelledby="explorer-heading">
+            <div class="section-heading">
+              <div><div class="eyebrow"><span class="eyebrow-line"></span> PRICE POSITION EXPLORER <span class="eyebrow-tag">04 / 06</span></div><h2 id="explorer-heading">Move the price. See the position.</h2></div>
+              <p class="section-aside">A competitive positioning tool based on observed prices. It does not predict demand, conversions, revenue or profit.</p>
+            </div>
+            <div class="explorer-layout">
+              <article class="panel price-control-panel">
+                <div class="panel-head"><div><span class="panel-kicker">YOUR EXPLORATORY PRICE</span><h3>Set a tentative monthly price</h3></div><span class="live-tag"><span class="pulse-dot"></span> LIVE</span></div>
+                <div class="price-display"><span class="currency">$</span><output id="price-output" for="price-slider">2.49</output><span class="price-period">/ month</span></div>
+                <label class="sr-only" for="price-slider">Tentative monthly price</label>
+                <input id="price-slider" class="price-slider" type="range" min="0" max="10" step="0.01" value="2.49" aria-label="Tentative monthly price">
+                <div class="range-labels"><span>$0</span><span>$10</span></div>
+                <div class="price-entry-row"><label for="price-number">Precise price</label><div class="number-wrap"><span>$</span><input id="price-number" type="number" min="0" max="10" step="0.01" value="2.49" aria-label="Enter tentative monthly price"></div></div>
+                <div class="recommended-band"><div class="band-heading"><span>MISSION 1 TEST BAND</span><strong>$1.99–$2.99 / month</strong></div><p>Preliminary research hypothesis. Your slider selection is exploratory and can sit outside this range.</p></div>
+                <div class="preset-heading"><span>SCENARIO PRESETS</span><small>Click to explore</small></div>
+                <div class="preset-grid">
+                  <button class="preset-card" type="button" data-price="1.99"><span class="preset-icon">↘</span><strong>Lower-price</strong><small>$1.99 / mo</small></button>
+                  <button class="preset-card" type="button" data-price="2.79"><span class="preset-icon">◎</span><strong>Market-middle</strong><small id="middle-preset-label">Median benchmark</small></button>
+                  <button class="preset-card" type="button" data-price="4.99"><span class="preset-icon">↗</span><strong>Premium</strong><small>$4.99 / mo</small></button>
+                </div>
+                <p class="preset-caveat">Presets are scenario values, not evidence of customer willingness to pay. Market-middle starts at the representative median.</p>
+              </article>
+              <article class="panel explorer-analysis-panel">
+                <div class="panel-head"><div><span class="panel-kicker">MARKET RELATIONSHIP</span><h3>Your position in the sample</h3></div><span class="analysis-spark">✳</span></div>
+                <div id="price-position-badge" class="position-badge"></div>
+                <div id="price-ladder" class="price-ladder"></div>
+                <div class="explorer-metrics" id="explorer-metrics"></div>
+                <div class="comparison-columns">
+                  <div><span class="comparison-label cheaper-label">LOWER-PRICED</span><div id="cheaper-list"></div></div>
+                  <div><span class="comparison-label comparable-label">WITHIN 10%</span><div id="comparable-list"></div></div>
+                  <div><span class="comparison-label higher-label">HIGHER-PRICED</span><div id="higher-list"></div></div>
+                </div>
+                <div class="dynamic-interpretation" id="dynamic-interpretation"></div>
+              </article>
+            </div>
+            <div class="analytical-boundary"><span class="info-dot">i</span><div><strong>Competitive comparison only</strong><p>Position labels use the representative benchmark distribution; “within 10%” is a display rule for price proximity. Neither measure implies demand or perceived value.</p></div></div>
+          </section>
+
+          <section class="section-block section-divider section-anchor" id="opportunities" aria-labelledby="opportunities-heading">
+            <div class="section-heading">
+              <div><div class="eyebrow"><span class="eyebrow-line"></span> COMPETITIVE OPPORTUNITIES <span class="eyebrow-tag">05 / 06</span></div><h2 id="opportunities-heading">Turn evidence into a test.</h2></div>
+              <p class="section-aside">Facts from the research are separated from strategic interpretations and untested product hypotheses.</p>
+            </div>
+            <div class="opportunity-grid" id="opportunity-grid"></div>
+            <div class="recommendation-panel" id="recommendation-panel"></div>
+          </section>
+
+          <section class="section-block section-divider section-anchor" id="methodology" aria-labelledby="methodology-heading">
+            <div class="section-heading">
+              <div><div class="eyebrow"><span class="eyebrow-line"></span> RESEARCH SOURCES &amp; METHODOLOGY <span class="eyebrow-tag">06 / 06</span></div><h2 id="methodology-heading">Trace every signal.</h2></div>
+              <p class="section-aside">Research date: October 27, 2026 · Market: United States · Currency: USD · Prices are snapshots, not live checkout feeds.</p>
+            </div>
+            <div class="method-grid">
+              <article class="panel methodology-panel">
+                <div class="panel-head"><div><span class="panel-kicker">HOW TO READ THIS DASHBOARD</span><h3>Method &amp; definitions</h3></div><span class="panel-icon">⌕</span></div>
+                <div class="method-content" id="method-content"></div>
+              </article>
+              <article class="panel limitations-panel">
+                <div class="panel-head"><div><span class="panel-kicker">TRANSPARENCY</span><h3>Research limitations</h3></div><span class="panel-icon">!</span></div>
+                <ul id="limitations-list" class="limitations-list"></ul>
+              </article>
+            </div>
+            <article class="panel sources-panel">
+              <div class="panel-head"><div><span class="panel-kicker">SOURCE REGISTER</span><h3>Evidence behind the offers</h3></div><span id="source-count" class="source-count"></span></div>
+              <div id="source-list" class="source-list"></div>
+            </article>
+          </section>
+        </main>
+        <footer class="footer"><span>PRICING INTELLIGENCE <b>·</b> MISSION 02</span><span>US MARKET SNAPSHOT · 27 OCT 2026</span><a href="#overview">Back to top ↑</a></footer>
+      </div>
+    </div>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>

@@ -1,0 +1,10 @@
+{
+  "name": "phase-1-pricing-dashboard",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static competitive pricing intelligence dashboard for the Movie and Show Recommendation Website.",
+  "scripts": {
+    "build": "node build.mjs",
+    "preview": "python3 -m http.server 4173"
+  }
+}
