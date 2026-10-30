@@ -9,5 +9,6 @@ await cp(resolve(root, "index.html"), resolve(output, "index.html"));
 await cp(resolve(root, "styles.css"), resolve(output, "styles.css"));
 await cp(resolve(root, "app.js"), resolve(output, "app.js"));
 await cp(resolve(root, "competitor_data.json"), resolve(output, "competitor_data.json"));
+await cp(resolve(root, "Mission_3_Pricing_Laboratory"), resolve(output, "mission-3-pricing-laboratory"), { recursive: true });
 await writeFile(resolve(output, ".nojekyll"), "");
-console.log("Static production build written to dist/.");
+console.log("Static production build written to dist/, including Mission 3 in its own subpath.");
