@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1320">
+  <meta name="description" content="An interactive, evidence-labeled pricing and cost laboratory for the Movie and Show Recommendation Website venture.">
+  <title>Pricing & Cost Lab | Movie and Show Recommendation Website</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./data.js" defer></script>
+  <script src="./docx-library.js" defer></script>
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#overview" aria-label="Pricing and Cost Lab home">
+        <span class="brand-mark"><span>P</span><i>+</i></span>
+        <span class="brand-name">PRICING<br><b>&amp; COST LAB</b><small>MISSION 03 · US MARKET</small></span>
+      </a>
+      <div class="sidebar-kicker">LAB NAVIGATION</div>
+      <nav class="nav-list" aria-label="Laboratory sections">
+        <a class="nav-link active" href="#overview"><span>01</span> Executive view</a>
+        <a class="nav-link" href="#model"><span>02</span> Customers & plans</a>
+        <a class="nav-link" href="#costs"><span>03</span> Cost structure</a>
+        <a class="nav-link" href="#analysis"><span>04</span> Financial analysis</a>
+        <a class="nav-link" href="#competitors"><span>05</span> Market benchmark</a>
+        <a class="nav-link" href="#decision"><span>06</span> Decision review</a>
+        <a class="nav-link" href="#handoff"><span>07</span> Mission 4 handoff</a>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="save-state"><span class="status-dot"></span><span><b id="save-status">Saved in this browser</b><small>Private local model · no account sync</small></span></div>
+        <div class="venture-mini"><small>VENTURE</small><strong>Movie &amp; Show<br>Recommendation Website</strong><a href="http://eplasterer.github.io/venture-pricing-dashboard/#landscape" target="_blank" rel="noreferrer">Open Mission 2 site ↗</a></div>
+        <div class="sidebar-foot">PRICING INTELLIGENCE<br><span>MISSION 03 / 03</span></div>
+      </div>
+    </aside>
+
+    <div class="main-shell">
+      <header class="topbar">
+        <div class="crumb"><span>VENTURE FINANCE</span><i>/</i><b id="crumb-current">EXECUTIVE VIEW</b></div>
+        <div class="topbar-right"><span class="snapshot-label"><span class="status-dot"></span> STUDENT SCENARIO</span><span class="topbar-market">UNITED STATES · USD</span></div>
+      </header>
+
+      <main id="main-content">
+        <section class="hero section-anchor" id="overview">
+          <div class="hero-copy">
+            <div class="eyebrow"><span></span> INTERACTIVE PRICING &amp; COST LABORATORY <b>MISSION 03</b></div>
+            <h1>Make the model<br><em>show its work.</em></h1>
+            <p class="hero-subtitle">Movie and Show Recommendation Website <i>·</i> United States</p>
+            <p class="hero-description">Adjust real operating benchmarks and clearly labeled assumptions. See how plan mix, payment fees and unresolved catalog rights affect the economics.</p>
+            <div class="hero-caveat"><span class="info-icon">i</span><span><b>Every forecast here is a scenario.</b> Mission 1 found no measured demand, willingness-to-pay or cost-to-serve data.</span></div>
+          </div>
+          <div class="hero-control">
+            <div class="hero-control-top"><span>ACTIVE SCENARIO</span><button class="quiet-button" id="save-scenario" type="button">＋ Save custom</button></div>
+            <div class="scenario-picker" role="group" aria-label="Select a financial scenario">
+              <button type="button" data-scenario="lean"><span>01</span><b>Lean</b><small>Validate cheaply</small></button>
+              <button type="button" data-scenario="typical" class="selected"><span>02</span><b>Typical</b><small>Working baseline</small></button>
+              <button type="button" data-scenario="expansion"><span>03</span><b>Expansion</b><small>Scale test</small></button>
+            </div>
+            <div class="scenario-caption" id="scenario-caption"></div>
+          </div>
+          <div class="hero-footer"><div><b id="active-date">30 OCT 2026</b><span>Research / source check</span></div><div><b>MISSION 1 → 3</b><span>Research snapshot flows into the model</span></div><div><b>EDITABLE</b><span>Nothing here confirms your decision</span></div></div>
+        </section>
+
+        <section class="section-block" aria-labelledby="summary-heading">
+          <div class="section-heading compact-heading">
+            <div><div class="eyebrow"><span></span> LIVE OPERATING MODEL</div><h2 id="summary-heading">The numbers move with you.</h2></div>
+            <p class="section-aside">Monthly view · annual subscription prices are normalized over 12 months. Startup cash stays separate unless you choose to amortize it.</p>
+          </div>
+          <div class="metric-grid" id="metric-grid"></div>
+          <div class="overview-grid">
+            <article class="panel">
+              <div class="panel-head"><div><span class="panel-kicker">MONTHLY OPERATING MIX</span><h3>Where the cost base sits</h3></div><span class="panel-icon">◒</span></div>
+              <p class="panel-desc">Monthly fixed run-rate plus optional startup recovery. Variable processing costs are shown in the unit economics.</p>
+              <div class="cost-donut-layout"><div id="cost-donut" class="donut" role="img" aria-label="Cost mix chart"></div><div id="cost-legend" class="donut-legend"></div></div>
+            </article>
+            <article class="panel">
+              <div class="panel-head"><div><span class="panel-kicker">UNIT ECONOMICS</span><h3>Each paid subscriber contributes</h3></div><span class="live-badge"><i></i> LIVE</span></div>
+              <div class="unit-economics" id="unit-economics"></div>
+              <div class="formula-note"><b>Contribution</b> = monthly-equivalent revenue less variable fees. It must cover fixed costs before operating profit begins.</div>
+            </article>
+          </div>
+          <div class="insight-strip" id="top-insight"></div>
+        </section>
+
+        <section class="section-block section-divider section-anchor" id="model" aria-labelledby="model-heading">
+          <div class="section-heading">
+            <div><div class="eyebrow"><span></span> CUSTOMER VOLUME &amp; PRODUCT MIX <b>02 / 07</b></div><h2 id="model-heading">Model the way people pay.</h2></div>
+            <p class="section-aside">These editable inputs shape the forecast. The proposed audience, conversion and plan mix are scenarios, not observed results.</p>
+          </div>
+          <div class="model-layout">
+            <article class="panel audience-panel">
+              <div class="panel-head"><div><span class="panel-kicker">MONTHLY FUNNEL</span><h3>Audience assumptions</h3></div><span class="panel-icon">↗</span></div>
+              <div class="assumption-field"><label for="audience-range">Qualified visitors / month <span class="assumption-tag">STUDENT INPUT</span></label><div class="range-value"><input id="audience-range" data-assumption="audience" type="range" min="0" max="50000" step="50"><label class="number-control"><span>people</span><input id="audience-number" data-assumption="audience" type="number" min="0" max="50000" step="50" aria-label="Qualified visitors per month"></label></div><div class="range-caps"><span>0</span><span>50k</span></div></div>
+              <div class="assumption-field"><label for="conversion-range">Paid conversion rate <span class="assumption-tag">NOT VALIDATED</span></label><div class="range-value"><input id="conversion-range" data-assumption="conversionPct" type="range" min="0" max="30" step="0.1"><label class="number-control"><span>%</span><input id="conversion-number" data-assumption="conversionPct" type="number" min="0" max="30" step="0.1" aria-label="Paid conversion rate percent"></label></div><div class="range-caps"><span>0%</span><span>30%</span></div></div>
+              <div class="funnel-result" id="funnel-result"></div>
+              <div class="assumption-field small-field"><label for="startup-amortization">Recover one-time setup over</label><div class="inline-select"><select id="startup-amortization" aria-label="Startup amortization period"><option value="0">Exclude from monthly break-even</option><option value="12">12 months</option><option value="24" selected>24 months</option><option value="36">36 months</option><option value="60">60 months</option></select><span class="select-caret">⌄</span></div></div>
+              <label class="check-line"><input type="checkbox" id="include-startup"><span>Include startup recovery in break-even and operating result</span></label>
+            </article>
+            <article class="panel products-panel">
+              <div class="panel-head"><div><span class="panel-kicker">PRODUCTS &amp; PRICING PLANS</span><h3>Build your revenue mix</h3></div><button class="primary-button compact-button" id="add-product" type="button">＋ Add plan</button></div>
+              <p class="panel-desc">Subscriber plan shares are normalized to 100% among paid subscribers. One-time plans use monthly unit sales. Free plans do not add revenue.</p>
+              <div id="products-list" class="products-list"></div>
+              <div class="product-total-row" id="product-total-row"></div>
+            </article>
+          </div>
+        </section>
+
+        <section class="section-block section-divider section-anchor" id="costs" aria-labelledby="cost-heading">
+          <div class="section-heading">
+            <div><div class="eyebrow"><span></span> VENTURE-SPECIFIC COST STRUCTURE <b>03 / 07</b></div><h2 id="cost-heading">See what it takes to run.</h2></div>
+            <p class="section-aside">Benchmarks, public prices and assumptions are labeled separately. Essential catalog rights are unpriced and excluded until a quote is obtained.</p>
+          </div>
+          <div class="cost-summary-bar" id="cost-summary-bar"></div>
+          <div class="cost-toolbar"><div class="filter-tabs" role="group" aria-label="Filter expenses"><button type="button" class="selected" data-cost-filter="all">All costs <span id="all-cost-count"></span></button><button type="button" data-cost-filter="recurring">Recurring</button><button type="button" data-cost-filter="startup">One-time setup</button><button type="button" data-cost-filter="variable">Variable fees</button></div><button class="secondary-button" id="add-cost" type="button">＋ Add custom cost</button></div>
+          <div id="cost-list" class="cost-grid"></div>
+          <div class="cost-footnotes" id="cost-footnotes"></div>
+        </section>
+
+        <section class="section-block section-divider section-anchor" id="analysis" aria-labelledby="analysis-heading">
+          <div class="section-heading">
+            <div><div class="eyebrow"><span></span> BREAK-EVEN, PROFITABILITY &amp; SENSITIVITY <b>04 / 07</b></div><h2 id="analysis-heading">Find the pressure points.</h2></div>
+            <p class="section-aside">The charts hold all non-price assumptions constant when testing price. They do not predict whether people would keep buying at another price.</p>
+          </div>
+          <div class="analysis-grid">
+            <article class="panel chart-card wide-chart">
+              <div class="panel-head"><div><span class="panel-kicker">OPERATING BREAK-EVEN</span><h3>Revenue against costs</h3></div><span class="mini-unit">MONTHLY · USD</span></div>
+              <p class="panel-desc">Break-even uses your current product mix and one-time sales. The vertical marker shows the current paid-subscriber forecast.</p>
+              <div id="breakeven-chart" class="svg-chart"></div>
+              <div class="chart-legend"><span><i class="legend revenue"></i> Revenue at current plan mix</span><span><i class="legend cost"></i> Total costs</span><span><i class="legend marker"></i> Current forecast</span></div>
+              <div id="breakeven-caption" class="chart-caption"></div>
+            </article>
+            <article class="panel chart-card">
+              <div class="panel-head"><div><span class="panel-kicker">PRICE SENSITIVITY</span><h3>What if price moved?</h3></div><span class="mini-unit">VOLUME HELD CONSTANT</span></div>
+              <p class="panel-desc">Illustrates arithmetic only: the same people are assumed to buy at each price.</p>
+              <div id="sensitivity-chart" class="bar-chart"></div>
+              <div class="chart-caption">Demand response is unknown. Test prices with customers before treating a scenario as a forecast.</div>
+            </article>
+            <article class="panel chart-card">
+              <div class="panel-head"><div><span class="panel-kicker">VOLUME SENSITIVITY</span><h3>Scale the audience</h3></div><span class="mini-unit">CURRENT CONVERSION</span></div>
+              <p class="panel-desc">Same paid conversion and plan mix; qualified visitor volume changes.</p>
+              <div id="volume-chart" class="bar-chart"></div>
+              <div class="chart-caption">Growth costs remain at their current budgets in this display; the model does not assume new marketing efficiency.</div>
+            </article>
+            <article class="panel product-analysis-card">
+              <div class="panel-head"><div><span class="panel-kicker">PRODUCT-LEVEL COMPARISON</span><h3>Contribution by plan</h3></div><span class="mini-unit">MONTHLY EQUIVALENT</span></div>
+              <div id="product-analysis" class="product-analysis"></div>
+              <div class="chart-caption">Shared fixed costs are covered only after the combined contribution reaches the break-even line.</div>
+            </article>
+          </div>
+          <div class="calculation-note"><span class="info-icon">i</span><div><b>Formula notes</b><p>Annual plan revenue is annual price ÷ 12. Card percentage and Stripe Billing fees apply to normalized subscription revenue. The $0.30 card fee is multiplied by monthly transactions; annual subscriptions contribute 1/12 of a charge per active subscriber per month. Break-even is shown in paid-subscriber equivalents at the current subscription mix.</p></div></div>
+        </section>
+
+        <section class="section-block section-divider section-anchor" id="competitors" aria-labelledby="competitor-heading">
+          <div class="section-heading">
+            <div><div class="eyebrow"><span></span> MISSION 1 COMPETITIVE PRICE SNAPSHOT <b>05 / 07</b></div><h2 id="competitor-heading">Price beside the alternatives.</h2></div>
+            <p class="section-aside">A dated research snapshot from the Mission 1 workbook and dataset. Plans bundle different features and are not perfect substitutes.</p>
+          </div>
+          <div class="market-topline" id="market-topline"></div>
+          <article class="panel competitor-panel">
+            <div class="panel-head"><div><span class="panel-kicker">OBSERVED U.S. OFFERS</span><h3>Monthly equivalent and evidence status</h3></div><label class="select-field"><span>SHOW</span><select id="competitor-filter"><option value="all">All offers</option><option value="paid">Paid only</option><option value="free">Free only</option></select></label></div>
+            <div class="table-wrap"><table class="competitor-table"><thead><tr><th>COMPETITOR / TIER</th><th>PRICE AS ADVERTISED</th><th>MONTHLY EQUIV.</th><th>WHAT IT COVERS</th><th>VERIFICATION</th></tr></thead><tbody id="competitor-rows"></tbody></table></div>
+            <div class="table-bottom"><span>RESEARCH AS OF <b id="competitor-date">27 OCT 2026</b></span><span>Annual price divided by 12 is comparison math only.</span></div>
+          </article>
+          <div class="benchmark-band" id="benchmark-band"></div>
+          <details class="source-drawer">
+            <summary>View source register and research limitations <span>＋</span></summary>
+            <div class="source-register" id="source-register"></div>
+          </details>
+        </section>
+
+        <section class="section-block section-divider section-anchor" id="decision" aria-labelledby="decision-heading">
+          <div class="section-heading">
+            <div><div class="eyebrow"><span></span> EVALUATE, REVISE &amp; CONFIRM YOUR CHOICE <b>06 / 07</b></div><h2 id="decision-heading">Review the risk before deciding.</h2></div>
+            <p class="section-aside">This rule-based review is transparent and repeatable. It cannot confirm a price for you or substitute for customer evidence.</p>
+          </div>
+          <div class="decision-layout">
+            <article class="panel risk-panel">
+              <div class="panel-head"><div><span class="panel-kicker">RULE-BASED RISK REVIEW</span><h3>What needs attention?</h3></div><span id="risk-score" class="risk-score">NOT REVIEWED</span></div>
+              <p class="panel-desc">Runs the same checks against your current inputs each time. Any edit makes the previous review stale.</p>
+              <div id="risk-findings" class="risk-findings"></div>
+              <div class="risk-actions"><button class="primary-button" id="run-review" type="button">Run decision review</button><span id="review-timestamp"></span></div>
+            </article>
+            <article class="panel confirm-panel">
+              <div class="panel-head"><div><span class="panel-kicker">YOUR PRICING DECISION</span><h3>Confirm only when you are ready</h3></div><span id="confirmation-state" class="not-confirmed">NOT CONFIRMED</span></div>
+              <div id="decision-summary" class="decision-summary"></div>
+              <label class="acknowledgement"><input type="checkbox" id="risk-ack"><span>I reviewed the open risks, unpriced licensing item, and scenario assumptions.</span></label>
+              <label class="justification-label" for="justification">Why are you choosing this pricing and plan mix? Include what you will validate next.</label>
+              <textarea id="justification" rows="5" maxlength="1800" placeholder="Write your rationale in your own words (at least 50 characters)."></textarea>
+              <div class="confirm-footer"><span id="justification-count">0 / 50 minimum characters</span><button class="confirm-button" id="confirm-decision" type="button">Confirm my decision</button></div>
+              <div id="confirmation-note" class="confirmation-note"></div>
+            </article>
+          </div>
+          <div class="guardrail"><span class="info-icon">!</span><p><b>The app will not choose or confirm a price for you.</b> To confirm, you must run the review, acknowledge its findings and write your own rationale.</p></div>
+        </section>
+
+        <section class="section-block section-divider section-anchor" id="handoff" aria-labelledby="handoff-heading">
+          <div class="section-heading">
+            <div><div class="eyebrow"><span></span> MISSION 4 DECISION HANDOFF <b>07 / 07</b></div><h2 id="handoff-heading">Carry forward a confirmed model.</h2></div>
+            <p class="section-aside">The downloadable decision report is created in your browser after your own confirmation. Nothing is sent to a server.</p>
+          </div>
+          <div class="handoff-panel panel">
+            <div class="handoff-copy"><div class="handoff-mark">M<span>4</span></div><div><span class="panel-kicker">STRUCTURED DECISION RECORD</span><h3>Keep the assumptions attached to the choice.</h3><p>Download a readable Word report and a JSON record for the next assignment. Both include model inputs, cost classifications, competitor evidence status, risks and your written rationale.</p><div class="privacy-line"><span class="status-dot"></span> Generated locally · private to this browser until you choose to share the files</div></div></div>
+            <div class="handoff-actions"><button class="secondary-button" id="export-model" type="button">Export editable model JSON</button><label class="secondary-button import-button" for="import-model">Import model JSON</label><input id="import-model" type="file" accept="application/json,.json" hidden><button class="download-button" id="download-docx" type="button" disabled>↓ Download DOCX report</button><button class="download-button" id="download-decision-json" type="button" disabled>↓ Download decision JSON</button></div>
+            <div id="handoff-status" class="handoff-status">Confirm a decision above to unlock the Mission 4 report files.</div>
+          </div>
+          <div class="deliverable-foot"><div><b>PROJECT FILES</b><a href="https://github.com/eplasterer/venture-pricing-dashboard.git" target="_blank" rel="noreferrer">GitHub repository ↗</a><a href="http://eplasterer.github.io/venture-pricing-dashboard/#landscape" target="_blank" rel="noreferrer">Original venture site ↗</a></div><div><b>LOCAL MODEL</b><span>Saved on this device in browser storage; use Export to keep a backup.</span></div><div><b>BOUNDARY</b><span>Mission 3 laboratory only. Mission 4 starts with your own confirmed report.</span></div></div>
+        </section>
+      </main>
+
+      <footer class="footer"><span>PRICING &amp; COST LAB <b>·</b> MISSION 03</span><span>U.S. SNAPSHOT · CHECKED 30 OCT 2026</span><a href="#overview">Back to top ↑</a></footer>
+    </div>
+  </div>
+
+  <dialog id="product-dialog" class="modal">
+    <form id="product-form" method="dialog">
+      <div class="modal-head"><div><span class="panel-kicker">PRODUCT SETUP</span><h3>Add a pricing plan</h3></div><button class="close-modal" type="button" data-close="product-dialog" aria-label="Close">×</button></div>
+      <label>Plan name<input name="name" required maxlength="60" placeholder="e.g. Group Premium"></label>
+      <label>Short description<input name="description" maxlength="120" placeholder="What does this plan unlock?"></label>
+      <div class="form-row"><label>Billing model<select name="billing" required><option value="monthly">Monthly subscription</option><option value="annual">Annual subscription</option><option value="one_time">One-time purchase</option></select></label><label>Price in USD<input name="price" type="number" min="0" max="10000" step="0.01" value="2.99" required></label></div>
+      <div class="form-row"><label>Paid subscriber mix %<input name="mix" type="number" min="0" max="100" step="1" value="0"></label><label>One-time sales / month<input name="units" type="number" min="0" max="1000000" step="1" value="0"></label></div>
+      <p class="modal-hint">Plan mix is normalized across paid subscription plans. One-time plans use the separate monthly sales input.</p>
+      <div class="modal-actions"><button class="secondary-button" type="button" data-close="product-dialog">Cancel</button><button class="primary-button" type="submit">Add plan</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="cost-dialog" class="modal">
+    <form id="cost-form" method="dialog">
+      <div class="modal-head"><div><span class="panel-kicker">CUSTOM EXPENSE</span><h3>Add a cost line</h3></div><button class="close-modal" type="button" data-close="cost-dialog" aria-label="Close">×</button></div>
+      <label>Cost name<input name="name" required maxlength="70" placeholder="e.g. Email delivery"></label>
+      <div class="form-row"><label>Classification<select name="class" required><option value="fixed">Fixed / recurring</option><option value="variable_pct">Variable · % of revenue</option><option value="variable_txn">Variable · per transaction</option><option value="variable_user">Variable · per paid user</option><option value="startup">One-time startup</option></select></label><label>Amount<input name="amount" type="number" min="0" max="1000000" step="0.01" value="0" required></label></div>
+      <label>Frequency<select name="frequency"><option value="monthly">Per month</option><option value="annual">Per year</option><option value="once">One-time total</option></select></label>
+      <label>Evidence / assumption<input name="assumption" maxlength="180" placeholder="Student estimate, quote required, or source basis"></label>
+      <label>Source URL (optional)<input name="url" type="url" placeholder="https://"></label>
+      <div class="modal-actions"><button class="secondary-button" type="button" data-close="cost-dialog">Cancel</button><button class="primary-button" type="submit">Add cost</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="scenario-dialog" class="modal">
+    <form id="scenario-form" method="dialog">
+      <div class="modal-head"><div><span class="panel-kicker">SAVE ASSUMPTIONS</span><h3>Name this scenario</h3></div><button class="close-modal" type="button" data-close="scenario-dialog" aria-label="Close">×</button></div>
+      <label>Scenario name<input name="name" required maxlength="40" placeholder="e.g. Campus pilot"></label>
+      <p class="modal-hint">A private snapshot of the current audience, products, prices and costs will be saved in this browser.</p>
+      <div class="modal-actions"><button class="secondary-button" type="button" data-close="scenario-dialog">Cancel</button><button class="primary-button" type="submit">Save scenario</button></div>
+    </form>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
